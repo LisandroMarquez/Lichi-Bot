@@ -1,0 +1,21 @@
+{
+  "name": "discord_bot",
+  "version": "1.0.0",
+  "description": "Bot de Discord creado para aprender a utilizar JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ascii-table": "^0.0.9",
+    "canvas": "^2.11.2",
+    "discord.js": "^14.9.0",
+    "glob": "^8.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
