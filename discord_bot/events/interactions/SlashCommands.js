@@ -15,13 +15,6 @@ module.exports = {
           content: "This command is outdated",
           ephermal: true,
         });
-
-      // Dev command only
-      if (command.developer && interaction.user.id !== "688114194427543563")
-        return interaction.reply({
-          content: "Este comando es solo válido para el developer",
-          ephermal: true,
-        });
       
       // Command execute
       command.execute(interaction, client);
