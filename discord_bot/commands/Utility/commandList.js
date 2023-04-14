@@ -25,8 +25,8 @@ module.exports = {
         .setStyle(ButtonStyle.Success),
       // Botón 2
       new ButtonBuilder()
-        .setCustomId("other")
-        .setLabel("Otros")
+        .setCustomId("utility")
+        .setLabel("Utilidad")
         .setStyle(ButtonStyle.Primary),
       // Botón 3
       new ButtonBuilder()
@@ -51,13 +51,13 @@ module.exports = {
       )
       .addFields(
         {
-          name: "Otros",
+          name: "Utilidad",
           value: "Comandos que puede usar cualquier persona",
         },
         {
           name: "Moderación",
           value: "Comandos exclusivos de moderación",
-        },
+        }
       )
       .setAuthor({
         name: "Help Menu - Index [Lichi Bot]",
@@ -76,6 +76,10 @@ module.exports = {
         {
           name: "/ban",
           value: "Banear al usuario a señalar (motivo no obligatorio)",
+        },
+        {
+          name: "/unban",
+          value: "Desbanear al usuario a señalar (le avisa por privado si es posible)",
         },
         {
           name: "/kick",
@@ -98,10 +102,9 @@ module.exports = {
 
     // Otros
     const embed_otros = new EmbedBuilder()
-      .setTitle("Comandos Restantes")
+      .setTitle("Comandos de Utilidad")
       .setColor("Purple")
       .addFields(
-        { name: "/help", value: "Traera el menú principal de comandos" },
         {
           name: "/userinfo",
           value: "Brinda información general de un usuario",
@@ -109,11 +112,15 @@ module.exports = {
         {
           name: "/serverinfo",
           value: "Brinda información general sobre este servidor",
+        },
+        {
+          name: "/sugerencia",
+          value: "Realiza una sugerencia en el canal con ese nombre",
         }
       )
       .setThumbnail("https://cdn-icons-png.flaticon.com/512/4632/4632321.png")
       .setAuthor({
-        name: "Help Menu - Others [Lichi Bot]",
+        name: "Help Menu - Utility [Lichi Bot]",
         iconURL: "https://cdn-icons-png.flaticon.com/512/4712/4712143.png",
       })
       .setFooter({
@@ -145,19 +152,16 @@ module.exports = {
       if (i.customId === "delete") {
         await i.update({ embeds: [embed_close], components: [] });
       }
-
       // Moderacion
-      if (i.customId === "mod") {
+      else if (i.customId === "mod") {
         await i.update({ embeds: [embed_mod], components: [buttons] });
       }
-
       // Otros
-      if (i.customId === "other") {
+      else if (i.customId === "utility") {
         await i.update({ embeds: [embed_otros], components: [buttons] });
       }
-
       // Menu
-      if (i.customId === "menu") {
+      else if (i.customId === "menu") {
         await i.update({ embeds: [embed_menu], components: [buttons] });
       }
     });

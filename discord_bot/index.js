@@ -1,12 +1,5 @@
 // Require the necessary discord.js classes
-const {
-  Client,
-  Collection,
-  GatewayIntentBits,
-  Partials,
-  Status,
-} = require(`discord.js`);
-const { Guilds, GuildMembers, GuildMessages } = GatewayIntentBits;
+const { Client, Collection, Partials, ActivityType } = require(`discord.js`);
 const { User, Message, GuildMember, ThreadMember } = Partials;
 
 // Create a new client instance
@@ -25,10 +18,20 @@ client.commands = new Collection();
 
 loadEvents(client);
 
+// AntiCrash System
+require(`./handlers/antiCrash`)(client);
+
 // Set bot activity
-client.on('ready', () => {
-  client.user.setActivity('Programing myself!')
-})
+client.on("ready", () => {
+  client.user.setPresence({
+    activities: [
+      {
+        name: "Programming myself! | GitHub: https://github.com/LisandroMarquez/Lichi-Bot",
+        type: ActivityType.Playing,
+      },
+    ],
+  });
+});
 
 // Log in to Discord with your client's token
 client.login(client.config.token);

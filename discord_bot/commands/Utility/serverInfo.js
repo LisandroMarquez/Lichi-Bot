@@ -40,7 +40,7 @@ module.exports = {
           value: [
             `Dueño: <@${ownerId}>`,
             `Creado: <t:${parseInt(createdTimestamp / 1000)}:R>`,
-            `ID Servidor: ${guild.id}`,
+            `ID Servidor: ||${guild.id}||`,
           ].join("\n"),
           inline: true,
         },
@@ -64,7 +64,7 @@ module.exports = {
           name: "Banner del Servidor",
           value: guild.bannerURL({ dynamic: true })
             ? "** **"
-            : "Este servidor no posee banner :(",
+            : "El servidor no posee banner :(",
         }
       )
       .setTimestamp()

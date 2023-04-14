@@ -18,36 +18,42 @@ module.exports = {
    * @param {ChatInputCommandInteraction} interaction
    */
 
-  async execute(interaction) {
+  async execute(interaction, client) {
     const user = interaction.options.getUser("user") || interaction.user;
     const miembro = await interaction.guild.members.fetch(user.id);
 
     // Rol más importante del user
     let highest_role = miembro.roles.highest;
+    if (miembro.user.bot)
+      return (
+        await interaction.channel.sendTyping(),
+        await interaction.reply({
+          content: "Los bots no están disponibles con esta función",
+          ephemeral: true,
+        })
+      );
 
     // Crear mensaje
+    const banner = await (
+      await client.users.fetch(user.id, { force: true })
+    ).bannerURL({ size: 4096, dynamic: true });
     const embed = new EmbedBuilder()
-
       // Ponerle color al lateral
       .setColor("Gold")
-
       // Avatar display
       .setAuthor({
         name: `${user.username}`,
         iconURL: `${user.displayAvatarURL({ dynamic: true })}`,
       })
-
       // Titulo del mensaje
       .setTitle(`Información del usuario ${user.username}`)
-
       // Campos extras
       .addFields(
         {
           name: `Info general`,
-          value: [
-            `**Tag: ** ${user.tag}`,
-            `**ID: ** ${user.id}`,
-        ].join('\n'),
+          value: [`**Tag: ** ${user.tag}`, `**ID: ** ||${user.id}||`].join(
+            "\n"
+          ),
         },
         {
           name: `Cuenta creada`,
@@ -66,21 +72,15 @@ module.exports = {
         },
         {
           name: `Banner del usuario`,
-          value: user.bannerURL({ dynamic: true })
-            ? "** **"
-            : "Este usuario no posee banner",
+          value: banner ? " " : "Este usuario no posee banner",
         }
       )
-
       // Mostrar fecha
-      .setImage(user.bannerURL({ size: 512, dynamic: true }))
-
+      .setImage(banner)
       // Mostrar la pf
       .setThumbnail(`${user.displayAvatarURL({ dynamic: true })}`)
-
       // Hora actual
       .setTimestamp()
-
       // Footer
       .setFooter({
         text: "Estallados Support",
