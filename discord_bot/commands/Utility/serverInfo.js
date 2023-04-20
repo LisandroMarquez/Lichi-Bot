@@ -36,27 +36,27 @@ module.exports = {
       })
       .addFields(
         {
-          name: "General Info",
+          name: "ℹ️ General Info ℹ️",
           value: [
-            `Dueño: <@${ownerId}>`,
-            `Creado: <t:${parseInt(createdTimestamp / 1000)}:R>`,
-            `ID Servidor: ||${guild.id}||`,
+            `👑 Dueño: <@${ownerId}>`,
+            `⏰ Creado: <t:${parseInt(createdTimestamp / 1000)}:R>`,
+            `🔗 ID Servidor: ||${guild.id}||`,
           ].join("\n"),
           inline: true,
         },
         {
-          name: "Mejoras",
+          name: "👨‍👨‍👦‍👦 Miembros 👨‍👨‍👦‍👦",
           value: [
-            `Nivel: ${guild.premiumTier}`,
-            `Mejoras: ${guild.premiumSubscriptionCount}`,
+            `👥 Usuarios: ${guild.memberCount - botCount}`,
+            `🤖 Bots: ${botCount}`,
           ].join("\n"),
           inline: true,
         },
         {
-          name: "Miembros",
+          name: "🌀 Mejoras 🌀",
           value: [
-            `Usuarios: ${guild.memberCount - botCount}`,
-            `Bots: ${botCount}`,
+            `❇️ Nivel: ${guild.premiumTier}`,
+            `⏫ Mejoras: ${guild.premiumSubscriptionCount}`,
           ].join("\n"),
           inline: true,
         },

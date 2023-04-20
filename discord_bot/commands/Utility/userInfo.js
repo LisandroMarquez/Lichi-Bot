@@ -21,6 +21,7 @@ module.exports = {
   async execute(interaction, client) {
     const user = interaction.options.getUser("user") || interaction.user;
     const miembro = await interaction.guild.members.fetch(user.id);
+    const nick = miembro.nickname
 
     // Rol más importante del user
     let highest_role = miembro.roles.highest;
@@ -50,28 +51,24 @@ module.exports = {
       // Campos extras
       .addFields(
         {
-          name: `Info general`,
-          value: [`**Tag: ** ${user.tag}`, `**ID: ** ||${user.id}||`].join(
-            "\n"
-          ),
+          name: `✒️ Info general ✒️`,
+          value: [
+            `📆 Creada: <t:${parseInt(user.createdTimestamp / 1000)}:R>`,
+            `#️⃣ Tag: ${user.tag}`,
+            `🆔 ID: ||${user.id}||`,
+
+          ].join("\n"),
         },
         {
-          name: `Cuenta creada`,
-          value: `<t:${parseInt(user.createdTimestamp / 1000)}:R>`,
-          inline: true,
+          name: '🏡 Server Info 🏡',
+          value: [
+            `⏰ Se unió: <t:${parseInt(miembro.joinedTimestamp / 1000)}:R>`,
+            `👤 Rol Principal: ${highest_role}`,
+            `🌟 Apodo: ${nick}`
+          ].join("\n"),
         },
         {
-          name: `Se unió al servidor`,
-          value: `<t:${parseInt(miembro.joinedTimestamp / 1000)}:R>`,
-          inline: true,
-        },
-        {
-          name: `Rol Principal`,
-          value: `${highest_role}`,
-          inline: true,
-        },
-        {
-          name: `Banner del usuario`,
+          name: `🏳️ Banner del usuario 🏳️`,
           value: banner ? " " : "Este usuario no posee banner",
         }
       )

@@ -116,6 +116,10 @@ module.exports = {
         {
           name: "/sugerencia",
           value: "Realiza una sugerencia en el canal con ese nombre",
+        },
+        {
+          name: "/imitar",
+          value: "Imita a un usuario y dí lo que desees",
         }
       )
       .setThumbnail("https://cdn-icons-png.flaticon.com/512/4632/4632321.png")

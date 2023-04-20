@@ -84,8 +84,9 @@ module.exports = {
         url: "https://discord.gg/zS5GAyWsh3",
       })
       .setTitle(
-        ":cyclone:  Démosle una cálida bienvenida al nuevo miembro de Estallados!  :blush: :heart_exclamation:"
+        "Démosle una cálida bienvenida al nuevo miembro de Estallados!  :blush: :heart_exclamation:"
       )
+      .setDescription(`Pasa por ${guild.channels.cache.get('848677050624639007')} para leer las reglas y tener una mejor experiencia 😉`)
       .setImage(`attachment://welcome.png`)
       .setColor('#b80431')
       .setTimestamp()
