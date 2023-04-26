@@ -142,18 +142,18 @@ module.exports = {
       // Campos extras
       .addFields(
         {
-          name: "Timeout por",
+          name: "💤 Timeout por",
           value: `<@${interaction.user.id}>`,
           inline: true,
         },
         {
-          name: `Motivo`,
-          value: `${razon}`,
+          name: "⏱️ Tiempo",
+          value: `${tiempo} minutos`,
           inline: true,
         },
         {
-          name: "Tiempo",
-          value: `${tiempo} minutos`,
+          name: `📝 Motivo`,
+          value: `${razon}`,
           inline: true,
         }
       )

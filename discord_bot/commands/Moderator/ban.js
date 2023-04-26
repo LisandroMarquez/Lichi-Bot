@@ -89,12 +89,12 @@ module.exports = {
       // Campos extras
       .addFields(
         {
-          name: "Baneado por",
+          name: "🚫 Baneado por",
           value: `<@${interaction.user.id}>`,
           inline: true,
         },
         {
-          name: `Motivo`,
+          name: `📝 Motivo`,
           value: `${razon}`,
           inline: true,
         }

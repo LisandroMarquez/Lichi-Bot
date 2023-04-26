@@ -125,12 +125,12 @@ module.exports = {
       // Campos extras
       .addFields(
         {
-          name: "Echado por",
+          name: "🛑 Echado por",
           value: `<@${interaction.user.id}>`,
           inline: true,
         },
         {
-          name: `Motivo`,
+          name: `📝 Motivo`,
           value: `${razon}`,
           inline: true,
         }

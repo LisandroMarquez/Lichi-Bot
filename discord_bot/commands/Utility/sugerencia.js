@@ -21,7 +21,7 @@ module.exports = {
    **/
   async execute(interaction) {
     const { options } = interaction;
-    const canal = interaction.guild.channels.cache.get("1095334408950644776"); //ID channel to suggest
+    const canal = interaction.guild.channels.cache.get("1100792708068544562"); //ID channel to suggest
     const description = options.getString("sugerencia");
     const user = interaction.user;
     const { guild } = interaction;

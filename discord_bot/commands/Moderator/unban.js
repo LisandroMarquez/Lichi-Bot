@@ -95,7 +95,7 @@ module.exports = {
       .setColor("White")
       // Campos extras
       .addFields({
-        name: "Desbaneado por",
+        name: "♻️ Desbaneado por",
         value: `<@${interaction.user.id}>`,
         inline: true,
       })

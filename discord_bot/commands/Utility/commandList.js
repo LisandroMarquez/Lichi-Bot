@@ -86,6 +86,14 @@ module.exports = {
           value: "Kickear al usuario a señalar (motivo no obligatorio)",
         },
         {
+          name: "/warn",
+          value: "Dar una advertencia al usuario a señalar (le avisa por privado si es posible)",
+        },
+        {
+          name: "/unwarn",
+          value: "Quitar una advertencia al usuario a señalar (le avisa por privado si es posible)",
+        },
+        {
           name: "/timeout",
           value: "Dar timeout al usuario a señalar (motivo no obligatorio)",
         }

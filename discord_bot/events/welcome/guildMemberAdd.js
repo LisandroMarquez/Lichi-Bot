@@ -75,7 +75,7 @@ module.exports = {
     });
 
     // Take channel to send welcome message to new members
-    const channel = member.guild.channels.cache.get("1093292937032511660"); // Change channel with the channel ID to send Welcome Embeds
+    const channel = member.guild.channels.cache.get("1100792651768406036"); // Change channel with the channel ID to send Welcome Embeds
 
     // Asd
     const { guild } = member;
@@ -94,9 +94,7 @@ module.exports = {
         "Démosle una cálida bienvenida al nuevo miembro de Estallados!  :blush: :heart_exclamation:"
       )
       .setDescription(
-        `Pasa por ${guild.channels.cache.get(
-          "848677050624639007"
-        )} para leer las reglas y tener una mejor experiencia 😉`
+        `Pasa por ${guild.channels.cache.get("1031217747100708984")} y ${guild.channels.cache.get("1008868144443572295")} para tener una mejor experiencia 😉`
       )
       .setImage(`attachment://welcome.png`)
       .setColor("#b80431")

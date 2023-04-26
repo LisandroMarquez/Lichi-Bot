@@ -96,12 +96,12 @@ module.exports = {
       // Campos extras
       .addFields(
         {
-          name: "Advertencia removida por",
+          name: "♻️ Advertencia removida por",
           value: `<@${interaction.user.id}>`,
           inline: true,
         },
         {
-          name: `Advertencias`,
+          name: `🧮 Advertencias`,
           value: `${warns}`,
           inline: true,
         }
@@ -128,7 +128,7 @@ module.exports = {
       // Titulo del mensaje
       .setTitle(`Se te ha removido una **advertencia**`)
       // Descripción
-      .setDescription(`Ahora posees ${warns}`)
+      .setDescription(`🧮 Ahora posees ${warns}`)
       // Color del costado
       .setColor("Yellow")
       // Mostrar fecha

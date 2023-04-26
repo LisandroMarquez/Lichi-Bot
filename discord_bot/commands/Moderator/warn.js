@@ -122,17 +122,17 @@ module.exports = {
       // Campos extras
       .addFields(
         {
-          name: "Advertido por",
+          name: "‼️ Advertido por",
           value: `<@${interaction.user.id}>`,
           inline: true,
         },
         {
-          name: `Motivo`,
+          name: `📝 Motivo`,
           value: `${razon}`,
           inline: true,
         },
         {
-          name: `Advertencias`,
+          name: `🧮 Advertencias`,
           value: `${data.Counter}`,
           inline: true,
         }
@@ -165,12 +165,12 @@ module.exports = {
       // Campos extras
       .addFields(
         {
-          name: "Advertido por",
+          name: "‼️ Advertido por",
           value: `<@${interaction.user.id}>`,
           inline: true,
         },
         {
-          name: `Motivo`,
+          name: `📝 Motivo`,
           value: `${razon}`,
           inline: true,
         }
@@ -197,7 +197,7 @@ module.exports = {
       // Titulo del mensaje
       .setTitle(`El usuario ${user.tag} fue baneado del servidor`)
       // Descripción
-      .setDescription("Razón del Ban: Acumulación de advertencias")
+      .setDescription("📝 Razón del Ban:\nAcumulación de advertencias")
       // Color del costado
       .setColor("Red")
       // Mostrar fecha
@@ -231,12 +231,12 @@ module.exports = {
       // Campos extras
       .addFields(
         {
-          name: "Baneado por",
+          name: "🚫 Baneado por",
           value: `<@${interaction.user.id}>`,
           inline: true,
         },
         {
-          name: `Motivo`,
+          name: `📝 Motivo`,
           value: `Acumulación de Advertencias [3]`,
           inline: true,
         }
