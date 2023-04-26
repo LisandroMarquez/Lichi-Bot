@@ -3,6 +3,7 @@ const {
   SlashCommandBuilder,
   EmbedBuilder,
 } = require("discord.js");
+const warning = require("../../schemas/warningModel");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -21,7 +22,16 @@ module.exports = {
   async execute(interaction, client) {
     const user = interaction.options.getUser("user") || interaction.user;
     const miembro = await interaction.guild.members.fetch(user.id);
-    const nick = miembro.nickname
+    const nick = miembro.nickname;
+    let data = await warning.findOne({
+      UserID: user.id,
+    });
+    var warns;
+    if (!data) {
+      warns = 0;
+    } else {
+      warns = data.Counter;
+    }
 
     // Rol más importante del user
     let highest_role = miembro.roles.highest;
@@ -56,15 +66,15 @@ module.exports = {
             `📆 Creada: <t:${parseInt(user.createdTimestamp / 1000)}:R>`,
             `#️⃣ Tag: ${user.tag}`,
             `🆔 ID: ||${user.id}||`,
-
           ].join("\n"),
         },
         {
-          name: '🏡 Server Info 🏡',
+          name: "🏡 Server Info 🏡",
           value: [
             `⏰ Se unió: <t:${parseInt(miembro.joinedTimestamp / 1000)}:R>`,
             `👤 Rol Principal: ${highest_role}`,
-            `🌟 Apodo: ${nick}`
+            `🌟 Apodo: ${nick}`,
+            `⚠️ Advertencias: ${warns}`,
           ].join("\n"),
         },
         {

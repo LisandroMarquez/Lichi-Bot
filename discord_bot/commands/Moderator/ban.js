@@ -144,7 +144,7 @@ module.exports = {
         iconURL: "https://media.tenor.com/YHSvndvR0nsAAAAC/goose-peepo.gif",
       });
 
-    await member.send({ embeds: [dmEmbed] });
+    await member.send({ embeds: [dmEmbed] }).catch(console.error);
     await member.ban({ deleteMessageSeconds: 0, reason: razon }).catch(console.error);
 
     interaction.reply({ embeds: [embed] });

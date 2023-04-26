@@ -144,14 +144,7 @@ module.exports = {
         iconURL: "https://media.tenor.com/YHSvndvR0nsAAAAC/goose-peepo.gif",
       });
 
-    try {
-      member.send({ embeds: [dmEmbed] });
-    } catch {
-      interaction.reply({
-        content: "No se pudo notificar al usuario que fue desbaneado",
-        ephemeral: true,
-      });
-    }
+    await member.send({ embeds: [dmEmbed] }).catch(console.error);
     await member.kick(razon).catch(console.error);
     interaction.reply({ embeds: [embed] });
   },
