@@ -10,14 +10,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@squarecloud/api": "^3.0.0",
     "ascii-table": "^0.0.9",
     "canvas": "^2.11.2",
     "discord.js": "^14.9.0",
     "glob": "^8.1.0",
-    "mongoose": "^7.0.4",
+    "mongoose": "^7.1.0",
     "node": "^19.8.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
   }
 }

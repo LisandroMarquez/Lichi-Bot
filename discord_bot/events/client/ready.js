@@ -9,18 +9,14 @@ module.exports = {
     // Cargar comandos
     loadCommands(client);
 
-    // Cliente completamente inicializado
-    console.log("El cliente está listo");
-
     // MongoDB connect
     await mongoose.connect(config.mongopass, {
-      keepAlive: true,
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
 
     if (mongoose.connect) {
-      console.log("MongoDB conectado")
+      console.log("MongoDB connected ✅\n🔰 Client ready to operate 🔰");
     }
   },
 };

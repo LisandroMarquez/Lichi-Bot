@@ -73,7 +73,8 @@ module.exports = {
           value: [
             `⏰ Se unió: <t:${parseInt(miembro.joinedTimestamp / 1000)}:R>`,
             `👤 Rol Principal: ${highest_role}`,
-            `🌟 Apodo: ${nick}`,
+            `🌟 Apodo: "${nick}"`,
+            `⬆️ Booster: ${miembro.premiumSince ? `Yes` : `No`}`,
             `⚠️ Advertencias: ${warns}`,
           ].join("\n"),
         },
