@@ -16,46 +16,83 @@ module.exports = {
    * @param {ChatInputCommandInteraction} interaction
    */
   async execute(interaction) {
-    // Creación botón
-    const buttons = new ActionRowBuilder().addComponents(
-      // Botón 1
-      new ButtonBuilder()
-        .setCustomId("menu")
-        .setLabel("Menú")
-        .setStyle(ButtonStyle.Success),
-      // Botón 2
-      new ButtonBuilder()
-        .setCustomId("utility")
-        .setLabel("Utilidad")
-        .setStyle(ButtonStyle.Primary),
-      // Botón 3
-      new ButtonBuilder()
-        .setCustomId("mod")
-        .setLabel("Moderación")
-        .setStyle(ButtonStyle.Secondary),
-      // Botón 4
-      new ButtonBuilder()
-        .setCustomId("delete")
-        .setLabel("Cerrar")
-        .setStyle(ButtonStyle.Danger)
+    // Creación botones
+    // Botón 1
+    const btn_menu = new ButtonBuilder()
+      .setCustomId("menu")
+      .setLabel("Menú ↩️")
+      .setStyle(ButtonStyle.Primary);
+    // Botón 2
+    const btn_random = new ButtonBuilder()
+      .setCustomId("random")
+      .setLabel("Random 🎲")
+      .setStyle(ButtonStyle.Secondary);
+    // Botón 3
+    const btn_util = new ButtonBuilder()
+      .setCustomId("utility")
+      .setLabel("Utilidad 🛠️")
+      .setStyle(ButtonStyle.Secondary);
+    // Botón 4
+    const btn_mod = new ButtonBuilder()
+      .setCustomId("mod")
+      .setLabel("Moderación 🛡️")
+      .setStyle(ButtonStyle.Secondary);
+    // Botón 5
+    const btn_close = new ButtonBuilder()
+      .setCustomId("delete")
+      .setLabel("Cerrar 💣")
+      .setStyle(ButtonStyle.Danger);
+
+    // Creación row_buttons
+    // Row 1
+    const row_menu = new ActionRowBuilder().addComponents(
+      btn_random,
+      btn_util,
+      btn_mod,
+      btn_close
+    );
+    // Row 2
+    const row_random = new ActionRowBuilder().addComponents(
+      btn_menu,
+      btn_util,
+      btn_mod,
+      btn_close
+    );
+    // Row 3
+    const row_util = new ActionRowBuilder().addComponents(
+      btn_menu,
+      btn_random,
+      btn_mod,
+      btn_close
+    );
+    // Row 4
+    const row_mod = new ActionRowBuilder().addComponents(
+      btn_menu,
+      btn_random,
+      btn_util,
+      btn_close
     );
 
     // Embeds
     // Menu
     const embed_menu = new EmbedBuilder()
       .setTitle("Menu Inicial")
-      .setColor("Purple")
+      .setColor("#4b63a6")
       .setThumbnail("https://cdn-icons-png.flaticon.com/512/4771/4771275.png")
       .setDescription(
         'Selecciona el apartado del cual deseas información o utiliza el botón "Cerrar" para eliminar este mensaje'
       )
       .addFields(
         {
-          name: "Utilidad",
-          value: "Comandos que puede usar cualquier persona",
+          name: "🎲 Random 🎲",
+          value: "Comandos sin finalidad más que el entretenimiento",
         },
         {
-          name: "Moderación",
+          name: "🛠️ Utilidad 🛠️",
+          value: "Comandos de utilidad como su propio nombre indica",
+        },
+        {
+          name: "🛡️ Moderación 🛡️",
           value: "Comandos exclusivos de moderación",
         }
       )
@@ -71,30 +108,33 @@ module.exports = {
     // Moderator
     const embed_mod = new EmbedBuilder()
       .setTitle("Comandos de Moderación")
-      .setColor("Purple")
+      .setColor("#4b63a6")
       .addFields(
         {
-          name: "/ban",
+          name: "🚫 /ban 🚫",
           value: "Banear al usuario a señalar (motivo no obligatorio)",
         },
         {
-          name: "/unban",
-          value: "Desbanear al usuario a señalar (le avisa por privado si es posible)",
+          name: "🔄 /unban 🔄",
+          value:
+            "Desbanear al usuario a señalar (le avisa por privado si es posible)",
         },
         {
-          name: "/kick",
+          name: "🛑 /kick 🛑",
           value: "Kickear al usuario a señalar (motivo no obligatorio)",
         },
         {
-          name: "/warn",
-          value: "Dar una advertencia al usuario a señalar (le avisa por privado si es posible)",
+          name: "‼️ /warn ‼️",
+          value:
+            "Dar una advertencia al usuario a señalar (le avisa por privado si es posible)",
         },
         {
-          name: "/unwarn",
-          value: "Quitar una advertencia al usuario a señalar (le avisa por privado si es posible)",
+          name: "♻️ /unwarn ♻️",
+          value:
+            "Quitar una advertencia al usuario a señalar (le avisa por privado si es posible)",
         },
         {
-          name: "/timeout",
+          name: "💤 /timeout 💤",
           value: "Dar timeout al usuario a señalar (motivo no obligatorio)",
         }
       )
@@ -108,26 +148,50 @@ module.exports = {
         iconURL: "https://media.tenor.com/YHSvndvR0nsAAAAC/goose-peepo.gif",
       });
 
-    // Otros
-    const embed_otros = new EmbedBuilder()
+    // Utility
+    const embed_utility = new EmbedBuilder()
       .setTitle("Comandos de Utilidad")
-      .setColor("Purple")
+      .setColor("#4b63a6")
       .addFields(
         {
-          name: "/userinfo",
+          name: "ℹ️ /userinfo ℹ️",
           value: "Brinda información general de un usuario",
         },
         {
-          name: "/serverinfo",
+          name: "🏡 /serverinfo 🏡",
           value: "Brinda información general sobre este servidor",
         },
         {
-          name: "/sugerencia",
+          name: "💡 /sugerencia 💡",
           value: "Realiza una sugerencia en el canal con ese nombre",
         },
         {
-          name: "/imitar",
+          name: "🥷🏻 /imitar 🥷🏻",
           value: "Imita a un usuario y dí lo que desees",
+        }
+      )
+      .setThumbnail("https://cdn-icons-png.flaticon.com/512/4632/4632321.png")
+      .setAuthor({
+        name: "Help Menu - Utility [Lichi Bot]",
+        iconURL: "https://cdn-icons-png.flaticon.com/512/4712/4712143.png",
+      })
+      .setFooter({
+        text: "Estallados Support",
+        iconURL: "https://media.tenor.com/YHSvndvR0nsAAAAC/goose-peepo.gif",
+      });
+
+    // Random
+    const embed_random = new EmbedBuilder()
+      .setTitle("Comandos de Entretenimiento")
+      .setColor("#4b63a6")
+      .addFields(
+        {
+          name: "🎱 /8ball 🎱",
+          value: "Da una respuesta random a tu pregunta",
+        },
+        {
+          name: "☄️ /prediccion ☄️",
+          value: "Arroja un porcentaje random a tu predicción",
         }
       )
       .setThumbnail("https://cdn-icons-png.flaticon.com/512/4632/4632321.png")
@@ -143,7 +207,7 @@ module.exports = {
     // Menú cerrado
     const embed_close = new EmbedBuilder()
       .setTitle("Menú de Comandos Cerrado")
-      .setColor("Purple")
+      .setColor("#4b63a6")
       .setThumbnail("https://cdn-icons-png.flaticon.com/512/9940/9940467.png")
       .setAuthor({
         name: "Lichi Bot",
@@ -154,7 +218,10 @@ module.exports = {
         iconURL: "https://media.tenor.com/YHSvndvR0nsAAAAC/goose-peepo.gif",
       });
     // Botón inicial
-    await interaction.reply({ embeds: [embed_menu], components: [buttons] });
+    await interaction.reply({
+      embeds: [embed_menu],
+      components: [row_menu],
+    });
 
     // Editar el mensaje al clickear el boton
     const collector = interaction.channel.createMessageComponentCollector();
@@ -166,15 +233,31 @@ module.exports = {
       }
       // Moderacion
       else if (i.customId === "mod") {
-        await i.update({ embeds: [embed_mod], components: [buttons] });
+        await i.update({
+          embeds: [embed_mod],
+          components: [row_mod],
+        });
       }
-      // Otros
+      // Random
+      else if (i.customId === "random") {
+        await i.update({
+          embeds: [embed_random],
+          components: [row_random],
+        });
+      }
+      // Utility
       else if (i.customId === "utility") {
-        await i.update({ embeds: [embed_otros], components: [buttons] });
+        await i.update({
+          embeds: [embed_utility],
+          components: [row_util],
+        });
       }
       // Menu
       else if (i.customId === "menu") {
-        await i.update({ embeds: [embed_menu], components: [buttons] });
+        await i.update({
+          embeds: [embed_menu],
+          components: [row_menu],
+        });
       }
     });
   },

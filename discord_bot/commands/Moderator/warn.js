@@ -173,6 +173,11 @@ module.exports = {
           name: `📝 Motivo`,
           value: `${razon}`,
           inline: true,
+        },
+        {
+          name: `🧮 Advertencias`,
+          value: `${data.Counter}`,
+          inline: true,
         }
       )
       // Footer
@@ -197,7 +202,7 @@ module.exports = {
       // Titulo del mensaje
       .setTitle(`El usuario ${user.tag} fue baneado del servidor`)
       // Descripción
-      .setDescription("📝 Razón del Ban:\nAcumulación de advertencias")
+      .setDescription("📝 **Razón del Ban:**\nAcumulación de advertencias")
       // Color del costado
       .setColor("Red")
       // Mostrar fecha

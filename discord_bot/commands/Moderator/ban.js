@@ -125,12 +125,12 @@ module.exports = {
       // Campos extras
       .addFields(
         {
-          name: "Baneado por",
+          name: "🚫 Baneado por",
           value: `<@${interaction.user.id}>`,
           inline: true,
         },
         {
-          name: `Motivo`,
+          name: `📝 Motivo`,
           value: `${razon}`,
           inline: true,
         }
@@ -145,7 +145,9 @@ module.exports = {
       });
 
     await member.send({ embeds: [dmEmbed] }).catch(console.error);
-    await member.ban({ deleteMessageSeconds: 0, reason: razon }).catch(console.error);
+    await member
+      .ban({ deleteMessageSeconds: 0, reason: razon })
+      .catch(console.error);
 
     interaction.reply({ embeds: [embed] });
   },

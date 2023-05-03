@@ -88,7 +88,7 @@ module.exports = {
       // Titulo del mensaje
       .setTitle(`El usuario ${user.tag} se le ha removido una **advertencia**`)
       // Color del costado
-      .setColor("Yellow")
+      .setColor("DarkGreen")
       // Mostrar fecha
       .setTimestamp()
       // Mostrar la pf
@@ -127,10 +127,21 @@ module.exports = {
       })
       // Titulo del mensaje
       .setTitle(`Se te ha removido una **advertencia**`)
-      // Descripción
-      .setDescription(`🧮 Ahora posees ${warns}`)
+      // Campos extras
+      .addFields(
+        {
+          name: "♻️ Advertencia removida por",
+          value: `<@${interaction.user.id}>`,
+          inline: true,
+        },
+        {
+          name: `🧮 Advertencias`,
+          value: `${warns}`,
+          inline: true,
+        }
+      )
       // Color del costado
-      .setColor("Yellow")
+      .setColor("DarkGreen")
       // Mostrar fecha
       .setTimestamp()
       // Footer

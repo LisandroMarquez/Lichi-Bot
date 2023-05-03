@@ -89,12 +89,12 @@ module.exports = {
       // Campos extras
       .addFields(
         {
-          name: "Kickeado por",
+          name: "🛑 Kickeado por",
           value: `<@${interaction.user.id}>`,
           inline: true,
         },
         {
-          name: `Motivo`,
+          name: `📝 Motivo`,
           value: `${razon}`,
           inline: true,
         }
@@ -125,7 +125,7 @@ module.exports = {
       // Campos extras
       .addFields(
         {
-          name: "🛑 Echado por",
+          name: "🛑 Kickeado por",
           value: `<@${interaction.user.id}>`,
           inline: true,
         },

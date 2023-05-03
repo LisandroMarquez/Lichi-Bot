@@ -24,7 +24,7 @@ module.exports = {
     // Build embed
     const embed = new EmbedBuilder()
       .setTitle(`Información del servidor: "${guild.name}"`)
-      .setColor("Gold")
+      .setColor("Blurple")
       .setThumbnail(`${guild.iconURL({ dynamic: true })}`)
       .setAuthor({
         name: `${guild.name}`,
@@ -42,7 +42,6 @@ module.exports = {
             `⏰ Creado: <t:${parseInt(createdTimestamp / 1000)}:R>`,
             `🔗 ID Servidor: ||${guild.id}||`,
           ].join("\n"),
-          inline: true,
         },
         {
           name: "👨‍👨‍👦‍👦 Miembros 👨‍👨‍👦‍👦",

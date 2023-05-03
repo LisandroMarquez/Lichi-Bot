@@ -26,9 +26,6 @@ module.exports = {
   async execute(interaction, client) {
     const user = interaction.options.getUser("usuario");
     const { guild } = interaction;
-    const member = await interaction.guild.members
-      .fetch(user.id)
-      .catch(console.error);
 
     // Echarse definitivamente a si mismo
     if (user.id === interaction.user.id)
@@ -59,14 +56,14 @@ module.exports = {
       // Titulo del mensaje
       .setTitle(`El usuario ${user.tag} ha sido desbaneado del servidor`)
       // Color del costado
-      .setColor("White")
+      .setColor("DarkGreen")
       // Mostrar fecha
       .setTimestamp()
       // Mostrar la pf
       .setThumbnail(`${user.displayAvatarURL({ dynamic: true })}`)
       // Campos extras
       .addFields({
-        name: "Desbaneado por",
+        name: "🔄 Desbaneado por",
         value: `<@${interaction.user.id}>`,
         inline: true,
       })
@@ -92,10 +89,10 @@ module.exports = {
       // Titulo del mensaje
       .setTitle(`Has sido **desbaneado**`)
       // Color del costado
-      .setColor("White")
+      .setColor("DarkGreen")
       // Campos extras
       .addFields({
-        name: "♻️ Desbaneado por",
+        name: "🔄 Desbaneado por",
         value: `<@${interaction.user.id}>`,
         inline: true,
       })

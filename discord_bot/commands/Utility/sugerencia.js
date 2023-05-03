@@ -44,7 +44,7 @@ module.exports = {
       // Titulo del mensaje
       .setTitle(`Nueva sugerencia!`)
       .setDescription(`${description}`)
-      .setColor("#c2c2c2")
+      .setColor("Purple")
       .addFields(
         {
             name: `Usuario que sugirió:`,

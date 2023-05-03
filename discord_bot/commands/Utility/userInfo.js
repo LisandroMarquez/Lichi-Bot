@@ -50,14 +50,14 @@ module.exports = {
     ).bannerURL({ size: 4096, dynamic: true });
     const embed = new EmbedBuilder()
       // Ponerle color al lateral
-      .setColor("Gold")
+      .setColor("#6e48e0")
       // Avatar display
       .setAuthor({
         name: `${user.username}`,
         iconURL: `${user.displayAvatarURL({ dynamic: true })}`,
       })
       // Titulo del mensaje
-      .setTitle(`Información del usuario ${user.username}`)
+      .setTitle(`Información del usuario: "${user.username}"`)
       // Campos extras
       .addFields(
         {
@@ -74,7 +74,7 @@ module.exports = {
             `⏰ Se unió: <t:${parseInt(miembro.joinedTimestamp / 1000)}:R>`,
             `👤 Rol Principal: ${highest_role}`,
             `🌟 Apodo: "${nick}"`,
-            `⬆️ Booster: ${miembro.premiumSince ? `Yes` : `No`}`,
+            `⬆️ Booster: ${miembro.premiumSince ? `Si` : `No`}`,
             `⚠️ Advertencias: ${warns}`,
           ].join("\n"),
         },
