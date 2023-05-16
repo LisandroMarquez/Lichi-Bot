@@ -192,6 +192,10 @@ module.exports = {
         {
           name: "☄️ /prediccion ☄️",
           value: "Arroja un porcentaje random a tu predicción",
+        },
+        {
+          name: "✋🏼 /slap ✋🏼",
+          value: "Pegale a una cachetada a un usuario",
         }
       )
       .setThumbnail("https://cdn-icons-png.flaticon.com/512/4632/4632321.png")

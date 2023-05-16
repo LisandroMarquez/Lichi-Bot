@@ -11,7 +11,7 @@ module.exports = {
   developer: true,
   data: new SlashCommandBuilder()
     .setName("reload")
-    .setDescription("Recarga tus comandos o eventos")
+    .setDescription("Recarga tus comandos o eventos [Dev Only]")
     .setDefaultMemberPermissions(PermissionFlagsBits.Administrator)
     .addSubcommand((options) =>
       options.setName("events").setDescription("Recarga los eventos")
