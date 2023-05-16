@@ -26,9 +26,8 @@ module.exports = {
   async execute(interaction) {
     const { options, member, guild } = interaction;
     const user = options.getUser("target");
-    // Obtener el ID del usuario que ejecuta el comando
-    const userId = member.user.id;
 
+    // Crear embed
     const Embed = new EmbedBuilder()
     // Info del servidor
     .setAuthor({
