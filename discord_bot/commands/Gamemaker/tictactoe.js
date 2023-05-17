@@ -25,7 +25,7 @@ module.exports = {
       isSlashGame: true,
       opponent: interaction.options.getUser("user"),
       embed: {
-        title: "2 Players - Tic Tac Toe",
+        title: "🈴  2P - Tic Tac Toe  *️⃣",
         color: "#9234eb",
         statusTitle: "Status",
         overTitle: "Game Over",

@@ -200,7 +200,8 @@ module.exports = {
           value: [
             "‎",
             "**🪢 /ahorcado 🪢**\nEl infame ahorcado con más de 400 palabras!",
-            "**✖️ /tictactoe 🟦**\nJuega al Ta-Te-Ti contra otro usuario!",
+            "**🈴 /tictactoe *️⃣**\nJuega al Ta-Te-Ti contra otro usuario!",
+            "**⌨️ /fast-typing ⌨️**\nIntenta escribir la oración brindada en el menor tiempo posible!"
           ].join("\n"),
         }
       )

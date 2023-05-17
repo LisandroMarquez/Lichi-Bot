@@ -17,8 +17,9 @@ module.exports = {
   async execute(interaction) {
     const Game = new Hangman({
       message: interaction,
+      isSlashGame: true,
       embed: {
-        title: "1 Player - Ahorcado",
+        title: "🪢  1P - Ahorcado  🪢",
         color: "#9234eb",
         statusTitle: "Status",
         overTitle: "Game Over",
