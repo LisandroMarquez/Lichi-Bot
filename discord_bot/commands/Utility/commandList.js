@@ -186,16 +186,22 @@ module.exports = {
       .setColor("#4b63a6")
       .addFields(
         {
-          name: "🎱 /8ball 🎱",
-          value: "Da una respuesta random a tu pregunta",
+          name: "**🧾 Comandos randoms 🧾**",
+          value: [
+            "‎",
+            "**🎱 /8ball 🎱**\nDa una respuesta random a tu pregunta",
+            "**☄️ /prediccion ☄️**\nArroja un porcentaje random a tu predicción",
+            "**✋🏼 /slap ✋🏼**\nPegale a una cachetada a un usuario",
+            "‎",
+          ].join("\n"),
         },
         {
-          name: "☄️ /prediccion ☄️",
-          value: "Arroja un porcentaje random a tu predicción",
-        },
-        {
-          name: "✋🏼 /slap ✋🏼",
-          value: "Pegale a una cachetada a un usuario",
+          name: "**🕹️ Juegos 🕹️**",
+          value: [
+            "‎",
+            "**🪢 /ahorcado 🪢**\nEl infame ahorcado con más de 400 palabras!",
+            "**✖️ /tictactoe 🟦**\nJuega al Ta-Te-Ti contra otro usuario!",
+          ].join("\n"),
         }
       )
       .setThumbnail("https://cdn-icons-png.flaticon.com/512/4632/4632321.png")
