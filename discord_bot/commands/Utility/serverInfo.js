@@ -54,8 +54,8 @@ module.exports = {
         {
           name: "🌀 Mejoras 🌀",
           value: [
-            `❇️ Nivel: ${guild.premiumTier}`,
             `⏫ Mejoras: ${guild.premiumSubscriptionCount}`,
+            `❇️ Nivel: ${guild.premiumTier}`,
           ].join("\n"),
           inline: true,
         },

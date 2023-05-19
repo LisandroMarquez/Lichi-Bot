@@ -136,6 +136,10 @@ module.exports = {
         {
           name: "💤 /timeout 💤",
           value: "Dar timeout al usuario a señalar (motivo no obligatorio)",
+        },
+        {
+          name: "🧹 /clear 🧹",
+          value: "Eliminar los últimos mensajes del canal en el que estas",
         }
       )
       .setThumbnail("https://cdn-icons-png.flaticon.com/512/4542/4542155.png")
@@ -164,10 +168,6 @@ module.exports = {
         {
           name: "💡 /sugerencia 💡",
           value: "Realiza una sugerencia en el canal con ese nombre",
-        },
-        {
-          name: "🥷🏻 /imitar 🥷🏻",
-          value: "Imita a un usuario y dí lo que desees",
         }
       )
       .setThumbnail("https://cdn-icons-png.flaticon.com/512/4632/4632321.png")
@@ -192,6 +192,7 @@ module.exports = {
             "**🎱 /8ball 🎱**\nDa una respuesta random a tu pregunta",
             "**☄️ /prediccion ☄️**\nArroja un porcentaje random a tu predicción",
             "**✋🏼 /slap ✋🏼**\nPegale a una cachetada a un usuario",
+            "**🥷🏻 /imitar 🥷🏻**\nImita a un usuario y dí lo que desees",
             "‎",
           ].join("\n"),
         },

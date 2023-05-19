@@ -12,7 +12,7 @@ const client = new Client({
 const { loadEvents } = require(`./handlers/eventHandler`);
 
 // Config stuff
-client.config = require("./config.json");
+client.config = require("./config/config.json");
 client.events = new Collection();
 client.commands = new Collection();
 

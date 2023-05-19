@@ -22,7 +22,7 @@ module.exports = {
   async execute(interaction, client) {
     const user = interaction.options.getUser("user") || interaction.user;
     const miembro = await interaction.guild.members.fetch(user.id);
-    const nick = miembro.nickname;
+    var nick = miembro.nickname;
     let data = await warning.findOne({
       UserID: user.id,
     });
@@ -32,6 +32,9 @@ module.exports = {
     } else {
       warns = data.Counter;
     }
+
+    // Si no posee nick
+    if (!nick) nick = "No posee apodo";
 
     // Rol más importante del user
     let highest_role = miembro.roles.highest;
@@ -73,7 +76,7 @@ module.exports = {
           value: [
             `⏰ Se unió: <t:${parseInt(miembro.joinedTimestamp / 1000)}:R>`,
             `👤 Rol Principal: ${highest_role}`,
-            `🌟 Apodo: "${nick}"`,
+            `🌟 Apodo: ${nick}`,
             `⬆️ Booster: ${miembro.premiumSince ? `Si` : `No`}`,
             `⚠️ Advertencias: ${warns}`,
           ].join("\n"),
