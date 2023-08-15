@@ -3,7 +3,6 @@ const {
   SlashCommandBuilder,
   EmbedBuilder,
 } = require("discord.js");
-const warning = require("../../schemas/warningModel");
 
 module.exports = {
   data: new SlashCommandBuilder()
@@ -23,15 +22,6 @@ module.exports = {
     const user = interaction.options.getUser("user") || interaction.user;
     const miembro = await interaction.guild.members.fetch(user.id);
     var nick = miembro.nickname;
-    let data = await warning.findOne({
-      UserID: user.id,
-    });
-    var warns;
-    if (!data) {
-      warns = 0;
-    } else {
-      warns = data.Counter;
-    }
 
     // Si no posee nick
     if (!nick) nick = "No posee apodo";
@@ -78,7 +68,6 @@ module.exports = {
             `👤 Rol Principal: ${highest_role}`,
             `🌟 Apodo: ${nick}`,
             `⬆️ Booster: ${miembro.premiumSince ? `Si` : `No`}`,
-            `⚠️ Advertencias: ${warns}`,
           ].join("\n"),
         },
         {

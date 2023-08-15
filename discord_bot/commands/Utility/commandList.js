@@ -124,16 +124,6 @@ module.exports = {
           value: "Kickear al usuario a señalar (motivo no obligatorio)",
         },
         {
-          name: "‼️ /warn ‼️",
-          value:
-            "Dar una advertencia al usuario a señalar (le avisa por privado si es posible)",
-        },
-        {
-          name: "♻️ /unwarn ♻️",
-          value:
-            "Quitar una advertencia al usuario a señalar (le avisa por privado si es posible)",
-        },
-        {
           name: "💤 /timeout 💤",
           value: "Dar timeout al usuario a señalar (motivo no obligatorio)",
         },
@@ -202,7 +192,7 @@ module.exports = {
             "‎",
             "**🪢 /ahorcado 🪢**\nEl infame ahorcado con más de 400 palabras!",
             "**🈴 /tictactoe *️⃣**\nJuega al Ta-Te-Ti contra otro usuario!",
-            "**⌨️ /fast-typing ⌨️**\nIntenta escribir la oración brindada en el menor tiempo posible!"
+            "**⌨️ /fast-typing ⌨️**\nIntenta escribir la oración brindada en el menor tiempo posible!",
           ].join("\n"),
         }
       )
